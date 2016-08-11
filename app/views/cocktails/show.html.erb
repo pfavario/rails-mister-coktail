@@ -1,0 +1,16 @@
+<h1>Cocktails#show</h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+<%= @cocktail.name %>
+<% @cocktail.doses.each do |dose| %>
+<%= dose.description %>
+<% end %>
+
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+<%= f.input :description %>
+<%= f.association :ingredient %>
+<%= f.button :submit %>
+<% end %>
+
+
